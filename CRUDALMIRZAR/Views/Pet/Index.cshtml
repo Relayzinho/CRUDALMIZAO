@@ -4,68 +4,108 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div class="row">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Idade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Genero)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Dono)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Endereco)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageName)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Idade)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genero)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Dono)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Endereco)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.PetId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PetId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PetId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <div class="col-md-12">
+        @* offset-md-1">*@
+        <h1>Pets</h1>
+
+        <input id="myInput" type="text" placeholder="Search..">
+        <br>
+        <br>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayName("Image")
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nome)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.Idade)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cor)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.Genero)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Dono)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Endereco)
+                    </th>
+                    <th>
+                        <a asp-action="Create" class="btn btn-sm btn-success" style="width:92px !important">
+                            <i class="fa-solid fa-plus"></i>
+                            New
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>
+
+                            <img src="@("~/image/"+item.ImageName)" asp-append-version="true" width="50px" height="50px" />
+
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Idade)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cor)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Genero)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Dono)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Endereco)
+                        </td>
+                        <td>
+
+                            <form asp-action="Delete" asp-route-id="@item.PetId">
+                                <div class="btn-group btn-group-sm">
+                                    <a asp-action="Create" asp-route-id="@item.PetId" class="btn btn-warning">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+
+                                    <a asp-action="Details" asp-route-id="@item.PetId" class="btn btn-info">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+
+                                    <button type="submit" class="btn btn-danger"
+                                        onclick="return confirm('Tem certeza? Que deseja excluir o registro selecionado?')">
+                                        <i class="far fa-trash-alt"> </i>
+                                    </button>
+                                </div>
+
+
+                            </form>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

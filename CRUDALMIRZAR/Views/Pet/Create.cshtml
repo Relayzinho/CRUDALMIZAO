@@ -4,19 +4,19 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>Pet</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+    <div class="col-md-6 offset-md-4">
+        <h3>Pet information</h3>
+        <hr />
+        <form asp-action="AddOrEdit" enctype="multipart/form-data" autocomplete="off">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PetId" />
             <div class="form-group">
                 <label asp-for="Nome" class="control-label"></label>
                 <input asp-for="Nome" class="form-control" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Idade" class="control-label"></label>
                 <input asp-for="Idade" class="form-control" />
@@ -29,9 +29,14 @@
             </div>
             <div class="form-group">
                 <label asp-for="Genero" class="control-label"></label>
-                <input asp-for="Genero" class="form-control" />
+                <br />
+                <input type="radio" name="genero" value="Male" asp-for="Genero" /> Masculino |
+                <input type="radio" name="genero" value="Female" asp-for="Genero" /> Feminino|
                 <span asp-validation-for="Genero" class="text-danger"></span>
+
+
             </div>
+
             <div class="form-group">
                 <label asp-for="Dono" class="control-label"></label>
                 <input asp-for="Dono" class="form-control" />
@@ -42,21 +47,30 @@
                 <input asp-for="Endereco" class="form-control" />
                 <span asp-validation-for="Endereco" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="ImageName" class="control-label"></label>
-                <input asp-for="ImageName" class="form-control" />
-                <span asp-validation-for="ImageName" class="text-danger"></span>
+                <label asp-for="ImageFile" class="control-label"></label>
+                <br />
+                <input asp-for="ImageFile" accept="image/*" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="submit" value="Criar" class="btn btn-primary w-100" />
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <a asp-action="Index" class="btn btn-secondary w-100">Ver Todos</a>
+                </div>
+
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

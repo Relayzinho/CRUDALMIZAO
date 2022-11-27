@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CRUDALMIRZAR.Models;
+using Microsoft.Extensions.Hosting;
 
 namespace CRUDALMIRZAR.Controllers
 {
@@ -57,6 +58,8 @@ namespace CRUDALMIRZAR.Controllers
         {
             if (ModelState.IsValid)
             {
+
+
                 _context.Add(pet);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

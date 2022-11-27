@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QXJkXaoTXlbjLLEq83yXBOlANO44qVNOynk/tOeuZv4=",
+  "Hash": "q6zevVg985tGbzRMI0oFATf4KW9aNFAZ3fe/AaedHIw=",
   "Source": "CRUDALMIRZAR",
   "BasePath": "_content/CRUDALMIRZAR",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Guilherme\\source\\repos\\CRUDALMIRZAR\\CRUDALMIRZAR\\wwwroot\\Image\\cachorro-independente-1.jpg",
+      "SourceId": "CRUDALMIRZAR",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Guilherme\\source\\repos\\CRUDALMIRZAR\\CRUDALMIRZAR\\wwwroot\\",
+      "BasePath": "_content/CRUDALMIRZAR",
+      "RelativePath": "Image/cachorro-independente-1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Image\\cachorro-independente-1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Guilherme\\source\\repos\\CRUDALMIRZAR\\CRUDALMIRZAR\\wwwroot\\Image\\golden-retriever-1.png",
+      "SourceId": "CRUDALMIRZAR",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Guilherme\\source\\repos\\CRUDALMIRZAR\\CRUDALMIRZAR\\wwwroot\\",
+      "BasePath": "_content/CRUDALMIRZAR",
+      "RelativePath": "Image/golden-retriever-1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Image\\golden-retriever-1.png"
     },
     {
       "Identity": "C:\\Users\\Guilherme\\source\\repos\\CRUDALMIRZAR\\CRUDALMIRZAR\\wwwroot\\js\\site.js",

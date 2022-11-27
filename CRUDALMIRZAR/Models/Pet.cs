@@ -47,12 +47,10 @@ namespace CRUDALMIRZAR.Models
 
         [Column(TypeName = "nvarchar(100)")]
         [DisplayName("Image Name")]
-
         public string ImageName { get; set; }
 
         [NotMapped]
         [DisplayName("Upload File")]
-
         public IFormFile ImageFile { get; set; }
 
 

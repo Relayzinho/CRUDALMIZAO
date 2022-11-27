@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\CRUDALMIRZAR.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Guilherme\\source\\repos\\CRUDALMIRZAR\\CRUDALMIRZAR\\wwwroot\\Image\\cachorro-independente-1.jpg",
+      "PackagePath": "staticwebassets\\Image\\cachorro-independente-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Guilherme\\source\\repos\\CRUDALMIRZAR\\CRUDALMIRZAR\\wwwroot\\Image\\golden-retriever-1.png",
+      "PackagePath": "staticwebassets\\Image\\golden-retriever-1.png"
+    },
+    {
       "Id": "C:\\Users\\Guilherme\\source\\repos\\CRUDALMIRZAR\\CRUDALMIRZAR\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
