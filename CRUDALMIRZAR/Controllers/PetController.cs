@@ -13,10 +13,12 @@ namespace CRUDALMIRZAR.Controllers
     public class PetController : Controller
     {
         private readonly PetDbContext _context;
+        private readonly IWebHostEnvironment _hostEnvironment;
 
-        public PetController(PetDbContext context)
+        public PetController(PetDbContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
+            this._hostEnvironment = hostEnvironment;
         }
 
         // GET: Pet
@@ -58,7 +60,16 @@ namespace CRUDALMIRZAR.Controllers
         {
             if (ModelState.IsValid)
             {
-
+                //Save image to wwwroot/image
+                string wwwRootPath = _hostEnvironment.WebRootPath;
+                string fileName = Path.GetFileNameWithoutExtension(pet.ImageFile.FileName);
+                string extension = Path.GetExtension(pet.ImageFile.FileName);
+                pet.ImageName = fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                string path = Path.Combine(wwwRootPath + "/Image/", fileName);
+                using (var fileStream = new FileStream(path, FileMode.Create))
+                {
+                    await pet.ImageFile.CopyToAsync(fileStream);
+                }
 
                 _context.Add(pet);
                 await _context.SaveChangesAsync();
