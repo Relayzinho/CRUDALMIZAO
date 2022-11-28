@@ -45,15 +45,5 @@ namespace CRUDALMIRZAR.Models
 
         public string Endereco { get; set; }
 
-        [Column(TypeName = "nvarchar(100)")]
-        [DisplayName("Image Name")]
-        public string ImageName { get; set; }
-
-        [NotMapped]
-        [DisplayName("Upload File")]
-        public IFormFile ImageFile { get; set; }
-
-
-
     }
 }
